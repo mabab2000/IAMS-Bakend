@@ -1,0 +1,113 @@
+.loginbox {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #4b15c9;
+  padding: 20px;
+  align-items: center;
+  width: 300px;
+  background-color: aqua;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.restbox {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+border: 1px solid #4b15c9;
+padding: 20px;
+align-items: center;
+width: 300px;
+background-color: rgb(49, 104, 104);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+input{
+  width:300px;
+  height: 30px;
+}
+.signupbox{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #4b15c9;
+  padding: 20px;
+  font-size: large;
+  align-items: center;
+  width: 300px;
+  background-color: aqua;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.requestbox{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #4b15c9;
+  padding: 20px;
+  font-size: large;
+  align-items: center;
+  width: 300px;
+  background-color: aqua;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.column {
+  width: 70%;
+  height: 100%;
+  align-content:center;
+}
+.column1 {
+  width: 35%;
+  background-color:grey;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.separator {
+  overflow: auto;
+  width: 5px;
+  height: 100%;
+  background-color: #000;
+}
+.usermenu {
+  position: relative;
+  width:100%;
+  margin-left:00px;
+  background-color:grey;
+}
+div{
+  overflow: auto;
+}
+.error-message {
+  color: red;
+}
+
+.error {
+  color: red;
+}
+
+.add_department {
+  display: flex;
+  justify-content: flex-end;
+}
+
+  
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+ 
