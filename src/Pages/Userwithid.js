@@ -31,7 +31,14 @@ function RequestTable() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <><Userheader/><body className='dash'>
+    <div className="container">
+    <div className="column1"><Adminmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body></>
+    ;
   }
 
   if (error) {
@@ -39,15 +46,15 @@ function RequestTable() {
   }
 
   return (
-    <><Userheader/>
+    <><body><Userheader/>
     <div className="container">
     <div className="column1"><Adminmenu /></div>
       <div className="separator"></div>
       <div className="column">
     
-    <div>
+    <div><center>
       <h1><font color='green'> <center>{requests.length} Users</center></font></h1>
-      <p>Users information</p>
+      <p>Users information for selected request</p>
       <table border='1'>
         <thead>
           <tr>
@@ -73,8 +80,8 @@ function RequestTable() {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div></div></div></>
+      </table></center>
+    </div></div></div></body></>
   );
 }
 

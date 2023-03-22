@@ -28,7 +28,13 @@ function RequestTable() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <body className='dash'><Userheader/>
+    <div className="container">
+    <div className="column1"><Receptionmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body>
   }
 
   if (error) {
@@ -36,12 +42,12 @@ function RequestTable() {
   }
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Receptionmenu /></div>
       <div className="separator"></div>
       <div className="column">
-    <div>
+    <div><center>
       <h2>Requests in Reception</h2>
       {requests && requests.length > 0 ? (
       <table border='1'>
@@ -81,8 +87,8 @@ function RequestTable() {
       </table>
       ) : (
         <p>No requests pending found on reception.</p>
-      )}
-    </div></div></div></>
+      )}</center>
+    </div></div></div></body></>
   );
 }
 

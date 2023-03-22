@@ -1,15 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn-login {
+  @apply  flex justify-center hover:bg-green-600 bg-blue-500 text-white font-bold py-0 w-auto px-4 rounded pl-4;
+}
+table{
+@apply border border-black
+}
+th{
+  @apply border border-black
+  }
+  td{
+    @apply border border-black
+    }
+input{
+  @apply  px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:border-blue-500;
+}
 .loginbox {
+  @apply bg-blue-300 rounded-lg p-4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 1px solid #4b15c9;
   padding: 20px;
   align-items: center;
-  width: 300px;
-  background-color: aqua;
+  width: auto;
+  
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
 .restbox {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 border: 1px solid #4b15c9;
@@ -54,23 +75,36 @@ input{
 }
 
 .container {
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  @apply bg-blue-200;
 }
 
 .column {
-  width: 70%;
+  width:100%;
   height: 100%;
-  align-content:center;
+ 
+ flex: 1;
+  overflow: auto;
+  @apply justify-center;
+}
+.dash{
+  @apply bg-blue-300;
+}
+th{
+  background-color: blue;
+  color:white;
 }
 .column1 {
-  width: 35%;
-  background-color:grey;
+  width: auto;
+  
   height: 100%;
   display: flex;
   justify-content: flex-end;
+  @apply bg-blue-300;
 }
 
 .separator {
@@ -80,14 +114,17 @@ input{
   background-color: #000;
 }
 .usermenu {
+
   position: relative;
-  width:100%;
-  margin-left:00px;
-  background-color:grey;
+  height:100%;
+  margin-right:0px;
+  
+  
 }
-div{
-  overflow: auto;
+li{
+  @apply text-black text-2xl font-bold  hover:bg-blue-700;
 }
+
 .error-message {
   color: red;
 }
@@ -108,6 +145,9 @@ div{
 
 .error-message {
   color: red;
+}
+li{
+  @apply text-green-800 hover:bg-black hover:text-3xl hover:text-white pl-4;
 }
 
  

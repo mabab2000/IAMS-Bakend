@@ -58,28 +58,28 @@ function UpdateRequest() {
   };
 
   return (
-    <>
+    <><body className='dash'>
       <Userheader/>
       <div className="container">
         <div className="column1"><Adminmenu /></div>
         <div className="separator"></div>
         <div className="column">
-          <div><center>
-            <h3>Assign the User to the corresponding department</h3>
+          <div className='loginbox'><center>
+            <h3 class="text-2xl font-bold">Assign the User to the corresponding department</h3>
             <form onSubmit={handleSubmit}>
               <input type="hidden" id="req_name" name="id" value={`${id}`} onChange={handleChange} required />
               <p/>
               <label>
-                Department ID:
+                Select department:
                 <p/>
                 <select name='depart_id' required onChange={handleChange}>
                   <option value=''>...Select department... </option>
                   {requests && requests.map(request => (
                     <option value={`${request.id}`}>{request.id}.{request.dep_name}</option>
                   ))}
-                </select>
+                </select><br/><br/>
               </label>
-              <button type="submit">Assign department</button>
+              <button type="submit" className='btn-login bg-green-500'>Assign department</button>
             </form>
             {error && <p style={{ color: 'red' }}>Error: {error}</p>}
             {response.message && (
@@ -90,7 +90,7 @@ function UpdateRequest() {
             )}</center>
           </div>
         </div>
-      </div>
+      </div></body>
     </>
   );
 }

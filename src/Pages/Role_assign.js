@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-
+import './index.css';
 import { useLocation } from 'react-router-dom';
 import Userheader from './Userheader';
 import Adminmenu from './Adminmenu';
@@ -50,12 +50,12 @@ const token=localStorage.getItem('token');
   };
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Adminmenu /></div>
       <div className="separator"></div>
       <div className="column">
-    <div><h1>Assign user to corresponding role</h1>
+    <div className='loginbox'><h1>Assign user to corresponding role</h1>
       <form onSubmit={handleSubmit}>
         <label>
           
@@ -67,9 +67,9 @@ const token=localStorage.getItem('token');
               {requests && requests.map(request => (
   <option value={`${request.id}`}>{request.id}.{request.name}</option>
 
-          ))}</select><p/>
+          ))}</select><br/><br/>
         </label>
-        <button type="submit">Assign Role</button>
+        <button type="submit" className='btn-login bg-green-500'>Assign Role</button>
       </form>
       {error && <p>Error: {error}</p>}
       {response.message && (
@@ -78,7 +78,7 @@ const token=localStorage.getItem('token');
           <p>Status: {response.status}</p>
         </div>
       )}
-    </div></div></div></>
+    </div></div></div></body></>
   );
 }
 

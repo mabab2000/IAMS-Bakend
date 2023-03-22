@@ -26,16 +26,22 @@ const id=localStorage.getItem('department');
       });
   }, []);
 
+  
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <body className='dash'><Userheader/>
+    <div className="container">
+    <div className="column1"><Receptionmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body>
   }
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Receptionmenu /></div>
       <div className="separator"></div>
@@ -75,7 +81,7 @@ const id=localStorage.getItem('department');
           ))}
         </tbody>
       </table>
-    </div></div></div></>
+    </div></div></div></body></>
   );
 }
 

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Userheader from './Userheader';
+
 import Departmentmenu from './Departmentmenu';
 function RequestTable() {
   const [requests, setRequests] = useState([]);
@@ -26,7 +27,14 @@ const id=localStorage.getItem('department');
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <><body className='dash'><Userheader/>
+    <div className="container">
+    <div className="column1"><Departmentmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body></>
+    ;
   }
 
   if (error) {
@@ -35,12 +43,13 @@ const id=localStorage.getItem('department');
 
   return (
     <><Userheader/>
+    <body className='dash'>
     <div className="container">
     <div className="column1"><Departmentmenu /></div>
       <div className="separator"></div>
       <div className="column">
     
-    <div>
+    <div><center>
       <h2>Requests in Department</h2>
       <p>Requests in your department</p>
       <table border='1'>
@@ -66,8 +75,8 @@ const id=localStorage.getItem('department');
             </tr>
           ))}
         </tbody>
-      </table>
-    </div></div></div></>
+      </table></center>
+    </div></div></div></body></>
   );
 }
 

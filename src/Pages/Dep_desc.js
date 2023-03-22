@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './index.css';
 import React, { useState, useEffect } from 'react';
 import Departmentmenu from './Departmentmenu';
 import Userheader from './Userheader';
@@ -38,28 +39,28 @@ const token=localStorage.getItem('token');
   };
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Departmentmenu /></div>
       <div className="separator"></div>
       <div className="column">
-    <div>
-    <div>
+   
+    <div className='loginbox'><center>
       <h2>Assign Request</h2>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
-        <div>
+       
           <label htmlFor='status'>Request Status:</label>
           <select id='status' name='dep_dsc' value={status} onChange={handleInputChange} required>
           <option value=''>..select descision...</option>
   <option value='Accepted'>Accepted</option>
   <option value='Not accepted'>Not Accepted</option>
-</select>
+</select><br/><br/>
 
-        </div>
-        <button type='submit'>Submit</button>
-      </form>
-    </div> </div></div></div></>
+        
+        <button type='submit' className='btn-login bg-green-500'>Submit</button>
+      </form></center>
+    </div> </div></div></body></>
   );
 }
 

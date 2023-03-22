@@ -21,12 +21,12 @@ function Track() {
   
 
   return (
-    <><Userheader />
+    <><body className='dash'><Userheader />
     <div className="container">
     <div className="column1"><Departmentmenu /></div>
       <div className="separator"></div>
       <div className="column">
-    <div>
+    <div><center>
       <h1>Your profile information</h1>
       {requests && requests.map(request => (
             <tr key={request.id}>
@@ -41,8 +41,8 @@ function Track() {
             
           ))}
           
-      
-    </div></div></div></>
+      </center>
+    </div></div></div></body></>
   );
 }
 

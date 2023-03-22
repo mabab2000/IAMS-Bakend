@@ -33,7 +33,7 @@ function Logout() {
   }
 
   return (
-    <>
+    <><body className='dash'>
       <Userheader />
       <div className="container">
         <div className="column1">
@@ -52,7 +52,7 @@ function Logout() {
                 
    </center>
       </div>
-      </div>
+      </div></body>
     </>
   );
 }

@@ -74,16 +74,19 @@ const Blog = () => {
 
 
   return (
+    <>
+    
+    
     <div style={{position: 'relative'}}>
       <Header style={{position: 'absolute', zIndex: '-1'}} />
-    <div className='signupbox'>
+    <div className='loginbox'>
     <form onSubmit={handleSubmit}>
         
       <label htmlFor="req_name">First Name:</label><br/>
-      <input type="text" id="req_name" name="first_name" onChange={handleChange} value={formData.first_name} required />
+      <input type="text" id="req_name" placeholder='First name' name="first_name" onChange={handleChange} value={formData.first_name} required />
       <br/>
       <label htmlFor="req_name">Last Name:</label><br/>
-      <input type="text" id="req_name" name="last_name" onChange={handleChange} value={formData.last_name} required />
+      <input type="text" id="req_name" placeholder='Last name' name="last_name" onChange={handleChange} value={formData.last_name} required />
       <br/>
       <label htmlFor="gender">Gender:</label><br/>
 <select name="gender" value={formData.gender} onChange={handleChange} required>
@@ -93,28 +96,30 @@ const Blog = () => {
 </select><br/>
 
       <label htmlFor="req_name">Phone Name:</label><br/>
-      <input type="text" id="req_name" name="phone" onChange={handleChange} value={formData.phone} maxLength={10} required />
+      <input type="text" id="req_name" placeholder='Mobile phone'name="phone" onChange={handleChange} value={formData.phone} maxLength={10} required />
 
       <br/>
       <label htmlFor="req_name">Email:</label><br/>
-      <input type="email" id="req_name" name="email" onChange={handleChange} value={formData.email} required />
+      <input type="email" id="req_name" placeholder='Enter your email' name="email" onChange={handleChange} value={formData.email} required />
       <br/>
       <label htmlFor="req_name">Password:</label><br/>
-      <input type="password" id="req_name" name="password" onChange={handleChange} value={formData.password} required />
+      <input type="password" id="req_name" placeholder='Password'name="password" onChange={handleChange} value={formData.password} required />
       <br/>
       <label htmlFor="req_name">Confirm Password:</label><br/>
-      <input type="password" id="req_name" name="password_confirmation" onChange={handleChange} value={formData.password_confirmation} required />
-      <br/>
+      <input type="password" id="req_name"placeholder='Confirm password' name="password_confirmation" onChange={handleChange} value={formData.password_confirmation} required />
+      <br/><br/>
+
+
      
       {successMessage && <div className="success">{successMessage}</div>}
       {error && <div className="error">{error}</div>}
 
       
-      <button type="submit">Sign up</button>
+      <button type="submit" className="btn-login bg-green-800" >Sign up</button>
     </form>
     </div>
     </div>
-  )
+    </>)
 }
 
 export default Blog

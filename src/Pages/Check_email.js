@@ -35,24 +35,26 @@ function CheckEmail() {
   
   return (
     <div style={{position: 'relative'}}>
-    <Header style={{position: 'absolute', zIndex: '-1'}} />
-  <div className='restbox'>
-      <h1>Reset password</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Enter yout Email address:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          /><p />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      {message && <p>{message}</p>}
-      {info && <pre>{JSON.stringify(info, null, 2)}</pre>}
-      {status && <p>Status: {status}</p>}
-      {error && <p>Error: {error}</p>}
+      <Header style={{position: 'absolute', zIndex: '-1'}} />
+      <div className='loginbox'>
+        <h1 className='font-bold text-2xl '>Reset your password</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Enter your Email address:<br/>
+            <input
+              type="email"
+              placeholder='Enter your email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <p /><br/>
+          </label>
+          <button type="submit" className='btn-login bg-green-600'>Submit</button>
+        </form>
+        {message && <p style={{ color: 'red' }}>{message}</p>}
+        {info && <pre style={{ color: 'red' }}>{JSON.stringify(info, null, 2)}</pre>}
+        {status && <p style={{ color: 'red' }}>Status: {status}</p>}
+        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       </div>
     </div>
   );

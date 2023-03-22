@@ -1,47 +1,49 @@
 import React from 'react';
+import './index.css';
 import {Link} from 'react-router-dom';
 function User() {
     const id=localStorage.getItem('id');
   const dep_id = localStorage.getItem('department');
 
   return (
+    <body className='dash'>
     <div className='usermenu'>
-            <h2>Dashboard</h2>
-        <h3>
-        <ul type='circle'>
-        <li>
-          <Link className='nav-link' to='/Admin'>
-            Account homepage
-          </Link>
-        </li><p />
-        <li>
-          <Link className='nav-link' to={`/Allusers`}>
-            Users
-          </Link>
-        </li><p/>
-        <li>
-          <Link className='nav-link' to={`/Alldepartment`}>
-            Department
-          </Link>
-        </li><p />
-        <li>
-          <Link className='nav-link' to={`/Allrequest`}>
-            Request
-          </Link>
-        </li><p/>
+            <h2 class="bg-blue-200 text-4xl underline pl-10 font-bold">Dashboard</h2>
         
-        <li>
+        <ul type='circle'>
+        
+          <Link className='nav-link' to='/Admin'>
+            <li>Account homepage </li>
+          </Link>
+        <p />
+        
+          <Link className='nav-link' to={`/Allusers`}>
+          <li> Users</li>
+          </Link>
+        <p/>
+        
+          <Link className='nav-link' to={`/Alldepartment`}>
+          <li>Department</li>
+          </Link>
+        <p />
+        
+          <Link className='nav-link' to={`/Allrequest`}>
+          <li> Request</li>
+          </Link>
+        <p/>
+        
+       
           <Link className='nav-link' to={`/Profile`}>
-            Profile
+          <li> Profile</li>
           </Link>
-        </li><p/>
-        <li>
+        <p/>
+       <br/><br/>
           <Link className='nav-link' to={`/Adminlogout?id=${id}`}>
-            Logout
+          <li> Logout</li>
           </Link>
-        </li>
-      </ul></h3></div>
-    
+        
+      </ul></div>
+    </body>
   );
 }
 

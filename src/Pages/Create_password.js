@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './index.css';
 import { useEffect } from 'react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -61,18 +62,18 @@ function ResetPassword() {
   return (
     <div style={{position: 'relative'}}>
     <Header style={{position: 'absolute', zIndex: '-1'}} />
-  <div className='restbox'>
-      <h2>Create new Password</h2>
+  <div className='loginbox'>
+      <h2 class="font-bold text-2xl">Create new Password</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Enter new password
+          Enter new password</label><br/>
           <input type="hidden" name='email' value={`${email}`} onChange={(e) => setEmail(e.target.value)} />
-        </label>
+        <br/>
 
         <input type="password" placeholder="New Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <label>Confirm Password</label>
+        <br/><label>Confirm Password</label><br/>
         <input type="password" placeholder="Confirm Password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
-        <p/><p/><button type="submit">Submit</button>
+        <br/><br/><button type="submit" className='btn-login bg-green-500'>Submit</button>
       </form>
       {message.map((msg) => (
   <p key={msg.key} className={msg.success ? 'success' : 'error'}>

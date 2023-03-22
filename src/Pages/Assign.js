@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
+import './index.css';
 import { useLocation } from 'react-router-dom';
 import Userheader from './Userheader';
 import Receptionmenu from './Receptionmenu';
@@ -47,11 +48,12 @@ function UpdateRequest() {
   };
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Receptionmenu /></div>
       <div className="separator"></div>
       <div className="column">
+      <div className='loginbox'>
     <div><h1>Assign the request to the corresponding department</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -63,8 +65,8 @@ function UpdateRequest() {
   <option value={`${request.id}`}>{request.id}.{request.dep_name}</option>
 
           ))}</select>
-        </label>
-        <button type="submit">Assign Request</button>
+        </label><br/><br/>
+        <button type="submit" className="btn-login bg-green-400">Assign Request</button>
       </form>
       {error && <p>Error: {error}</p>}
       {response && response.message && (
@@ -73,7 +75,7 @@ function UpdateRequest() {
     <p>Status: {response.status}</p>
   </div>
 )}
-    </div></div></div></>
+    </div></div></div></div></body></>
   );
 }
 

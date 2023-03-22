@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {useLocation } from 'react-router-dom';
+import './index.css';
 import Usermenu from './Usermenu';
 import Userheader from './Userheader';
 function Track() {
@@ -20,7 +21,7 @@ function Track() {
   
 
   return (
-    <><Userheader />
+    <><body className='dash'><Userheader />
     <div className="container">
     <div className="column1"><Usermenu /></div>
       <div className="separator"></div>
@@ -49,7 +50,7 @@ function Track() {
         ))}
       </ul>
       </center>
-    </div></div></div></>
+    </div></div></div></body></>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+
 import image1 from './image1.PNG';
 
 const Header = () => {
@@ -21,31 +22,44 @@ const Header = () => {
     <div className="background-image">
         <BackgroundImage bgImage={image1}>
     <header>
-        <h1><center><font > Welcom to IAMS</font></center></h1>
-        <h6><center><font size='15'>I</font>nternship <font size='15'>A</font>pplication <font size='15'>M</font>anagement <font size='15'>S</font>ystem</center></h6>
-        <nav>
-  <ul>
-    <td className='hometd'><li><h3>Home</h3></li></td>
-    <td className='hometd'><li><h3>About</h3></li></td>
-    <td className='hometd'><li><h3>Contact</h3></li></td>
-    <td className='hometd'><li><h3>Services</h3></li></td>
     
+    <div class="text-white-500 bg-green-500 h-20 w-500 flex items-center justify-center">
+  <h1 class="text-4xl text-white font-bold">Welcome to IAMS</h1>
+</div>
+<div class="flex justify-between bg-blue-500 px-4 py-2">
+  <div class="flex items-center">
+    <a href="/" class="text-white  font-bold hover:bg-blue-200 px-4 py-2 rounded">
+      Home
+    </a>
+    
+  </div>
+  <a href="/blog" class="text-white   font-bold hover:bg-green-500 px-4 py-2 rounded ml-auto">
+    Register
+  </a>
+  <a href="/login" class="text-white  font-bold hover:bg-green-500 px-4 py-2 rounded ">
+    Login
+  </a>
+</div>
+<div className='header'class="text-blue-500   h-5 w-50 flex items-center justify-center">
+  <h5 class="text-0xl bg-white font-italic text-black">Internership Applicaton Management System</h5>
+</div>
+<div class=" h-20"></div>
 
-    <a href='/Login'><td className='hometdd' bgcolor='green'><li><h3><font color='white'>Sign in</font></h3></li></td></a>
-    <a href='/blog'><td className='hometdd' bgcolor='green'><li><h3><font color='white'>Signup</font></h3></li></td></a>
-  </ul>
-</nav>
+<div class=" rounded w-3/10">
+  <h1 class="font-bold text-2xl text-green-800 underline pl-4">Objectives</h1>
+  <p class="text-white pl-3 ">Providing practical work experience</p>
+  <p class="text-white pl-3 ">Exposure to the industry</p>
+  <p class=" text-white pl-3 ">Exposure to the industry</p>
+  <p class="text-white pl-3 ">Professional networking</p>
+  <p class="text-white pl-3 ">Skill development</p>
+  <p class="text-white pl-3 ">Career exploration</p>
+</div>
 
-<div>
-      
-    </div>
-      <h2>Available Internship place</h2>
-      
-        <ul className='available'>
-          <li>Networking</li>
-          <li>Software developemnt</li>
-          <li>Contact</li>
-        </ul>
+
+
+
+
+        
       
     </header>
     </BackgroundImage>

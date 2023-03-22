@@ -28,7 +28,13 @@ const id=localStorage.getItem('department');
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <body className='dash'><Userheader/>
+    <div className="container">
+    <div className="column1"><Departmentmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body>
   }
 
   if (error) {
@@ -36,12 +42,12 @@ const id=localStorage.getItem('department');
   }
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Departmentmenu /></div>
       <div className="separator"></div>
       <div className="column">
-    <div>
+    <div><center>
        <h2><center>Requests in Department</center></h2>
       {requests && requests.length > 0 ? (
        
@@ -68,7 +74,7 @@ const id=localStorage.getItem('department');
               <td>{request.status}</td>
               <td>
                 <Link className='nav-link' to={`/Dep_desc?id=${request.id}`}>
-                  Make descision
+                <button style={{backgroundColor: 'green', color: 'white', padding: '7px', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Decision</button>
                 </Link>
               </td>
               
@@ -78,8 +84,9 @@ const id=localStorage.getItem('department');
       </table>
       ) : (
         <p>No requests pending found in this department.</p>
-      )}
-    </div></div></div></>
+      )}</center>
+      
+    </div></div></div></body></>
   );
 }
     

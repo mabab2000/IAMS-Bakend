@@ -52,6 +52,7 @@ const Form = () => {
       console.error(error.response.data); // error response
       if (error.response.data.message.includes('Duplicate entry')) {
         setError('Your request is already received');
+        setError(null);
       } else {
         setError(error.response.data.message);
       }
@@ -60,32 +61,32 @@ const Form = () => {
   };
 
   return (
-    <><Userheader />
+    <><body className='dash'><Userheader />
     <div className="container">
     <div className="column1"><Usermenu /></div>
       <div className="separator"></div>
       <div className="column">
-        <div className='requestbox'>
+        <div className='loginbox'>
     <form onSubmit={handleSubmit}>
       <input type="hidden" id="user_id" name="user_id" onChange={handleChange} value={`${user_id}`} required />
 
-      <label htmlFor="req_name">Request Name:</label>
+      <label htmlFor="req_name">Request Name:</label><br/>
       <input type="text" id="req_name" name="req_name" onChange={handleChange} value={formData.req_name} required />
-
-      <label htmlFor="file1">Motivational letter:</label>
+      <br/>
+      <label htmlFor="file1">Motivational letter:</label><br/>
       <input type="file" id="file1" name="file1" onChange={handleChange} required />
-
-      <label htmlFor="file2">Recommendation from university:</label>
+      <br/>
+      <label htmlFor="file2">Recommendation from university:</label><br/>
       <input type="file" id="file2" name="file2" onChange={handleChange} required />
-
-      <label htmlFor="description">Description:</label><br/>
+      <br/>
+      <label htmlFor="description">Description:</label><br/><br/>
       <textarea  height='30' id="description" name="description" onChange={handleChange} value={formData.description} required />
-<br/>
+<br/><br/>
       {error && <div className="error">{error}</div>}
       {success && <div className="success">{success}</div>}
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn-login bg-green-800">Submit</button>
     </form>
-    </div></div></div>
+    </div></div></div></body>
     </>
   );
 };

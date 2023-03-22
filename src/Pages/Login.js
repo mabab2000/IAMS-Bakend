@@ -42,30 +42,34 @@ function Login() {
   return (
     <div style={{position: 'relative'}}>
       <Header style={{position: 'absolute', zIndex: '-1'}} />
-      <div className='loginbox'>
+      <div className=' gb-grey-500 loginbox'>
         <form onSubmit={handleSubmit}>
           <label>
-            Email:
+            Email:<p/>
             <input
               type="email"
+              placeholder='Enter email address'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
+            /><p/>
           </label>
           <label>
-            Password:
+            Password:<p/>
             <input
               type="password"
+              placeholder='Password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
-          </label><br /><br/>
+            /><br/><br/>
+          </label>
           <div>
-            <input type="submit" value="Log in" /> 
+    <input type="submit" value="Log in" className="btn-login bg-green-800" />
+  </div>
+<p/>
             <a href='/check_email'>
               <font color='blue'>Forget password?</font>
             </a>
-          </div>
+          
           {successMessage && <div className='error-message'>{successMessage}</div>}
         </form>
       </div>

@@ -27,7 +27,13 @@ const id=localStorage.getItem('department');
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <><body className='dash'><Userheader/>
+    <div className="container">
+    <div className="column1"><Adminmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body></>
   }
 
   if (error) {
@@ -36,15 +42,17 @@ const id=localStorage.getItem('department');
 
   return (
     <><Userheader/>
-    <div className="container">
+
+    <body class="dash">
+    <div className="container ">
     <div className="column1"><Adminmenu /></div>
       <div className="separator"></div>
       <div className="column">
-    
+    <center>
     <div>
       <h1><font color='green'> <center>{requests.length} Users</center></font></h1>
       <p>Users information</p>
-      <table border='1'>
+      <table border={1} cellSpacing={0}>
         <thead>
           <tr>
             <th>ID</th>
@@ -83,7 +91,7 @@ const id=localStorage.getItem('department');
           ))}
         </tbody>
       </table>
-    </div></div></div></>
+    </div></center></div></div></body></>
   );
 }
 

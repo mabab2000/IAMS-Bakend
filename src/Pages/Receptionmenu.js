@@ -5,7 +5,7 @@ function usermenu(){
     
     return (
         <div className='usermenu'>
-            <h2>Dashboard</h2>
+             <h2 class="bg-blue-200 text-4xl underline pl-10 font-bold">Dashboard</h2>
         <h3>
         <ul type='circle'>
         <li>

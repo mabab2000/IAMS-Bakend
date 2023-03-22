@@ -23,7 +23,13 @@ const id=localStorage.getItem('department');
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <><body className='dash'><Userheader/>
+    <div className="container">
+    <div className="column1"><Adminmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body></>
   }
 
   if (error) {
@@ -31,21 +37,21 @@ const id=localStorage.getItem('department');
   }
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Adminmenu /></div>
       <div className="separator"></div>
       <div className="column">
     
-    <div>
+    <div><center>
       <h1><font color='green'> <center> Manage department</center></font></h1>
-      <p>Department information</p>
+      <p>Department information</p></center>
       <div className='add_department'>
       <Link className='nav-link' to={`/createdepartment`}>
       <button style={{backgroundColor: 'blue', color: 'white', padding: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Add new</button>
                 </Link>
-                </div><p/><br/>
-      <table border='1' width='100%'>
+                </div><p/><br/><center>
+      <table  width=''>
         <thead>
           <tr>
             <th>Id</th>
@@ -78,8 +84,8 @@ const id=localStorage.getItem('department');
             </tr>
           ))}
         </tbody>
-      </table>
-    </div></div></div></>
+      </table></center>
+    </div></div></div></body></>
   );
 }
 

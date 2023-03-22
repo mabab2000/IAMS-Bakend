@@ -7,7 +7,7 @@ function User() {
   const id = localStorage.getItem('id');
 
   return (
-    <>
+    <><body className='dash'>
       <Userheader />
       <div className="container">
         <div className="column1">
@@ -29,7 +29,7 @@ function User() {
           <br />
           <b>Time-saving:</b> By automating tasks such as sending email notifications and tracking applicant status, the system can save recruiters time and increase their efficiency.
         </div>
-      </div>
+      </div></body>
     </>
   );
 }

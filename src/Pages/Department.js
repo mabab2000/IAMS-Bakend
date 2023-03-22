@@ -5,7 +5,7 @@ function User() {
   const dep_id = localStorage.getItem('department');
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Receptionmenu /></div>
       <div className="separator"></div>
@@ -24,7 +24,7 @@ function User() {
 <b>Time-saving:</b> By automating tasks such as sending email notifications and tracking applicant status, the system can save recruiters time and increase their efficiency.
 
       
-    </div></div></>
+    </div></div></body></>
   );
 }
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import Userheader from './Userheader';
@@ -27,7 +28,14 @@ const id=localStorage.getItem('department');
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <><Userheader/><body className='dash'>
+    <div className="container">
+    <div className="column1"><Adminmenu /></div>
+      <div className="separator"></div>
+      <div className="column">
+    <div class="flex justify-center  h-20  font-bold text-blue-800 items-center">Loading...</div>
+    </div></div></body></>
+    ;
   }
 
   if (error) {
@@ -35,13 +43,15 @@ const id=localStorage.getItem('department');
   }
 
   return (
-    <><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Adminmenu /></div>
       <div className="separator"></div>
       <div className="column">
     
     <div>
+     <center>
+    
       <h1><font color='green'> <center> Requests</center></font></h1>
       <p>Requests information</p>
       <table border='1'>
@@ -61,10 +71,10 @@ const id=localStorage.getItem('department');
           {requests && requests.map(request => (
             <tr key={request.id}>
               
-              <td><Link className='nav-link' to={`/Userwithid?id=${request.user_id}`}>
+              <td><Link class="text-blue-800"className='nav-link' to={`/Userwithid?id=${request.user_id}`}>
               {request.user_id}
                 </Link></td>
-              <td><Link className='nav-link' to={`/Departmentwithid?id=${request.depart_id}`}>
+              <td><Link class="text-blue-800"className='nav-link' to={`/Departmentwithid?id=${request.depart_id}`}>
               {request.depart_id}
                 </Link></td>
              
@@ -79,7 +89,9 @@ const id=localStorage.getItem('department');
           ))}
         </tbody>
       </table>
-    </div></div></div></>
+      </center>
+      </div>
+    </div></div></body></>
   );
 }
 
