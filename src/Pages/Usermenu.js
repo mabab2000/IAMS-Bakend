@@ -1,40 +1,47 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AiOutlineUser, AiOutlineLogout, AiOutlineHome, AiFillProfile, AiFillFileAdd } from 'react-icons/ai';
 import './index.css';
-function usermenu(){
-    const id=localStorage.getItem('id');
-    
-    return (
-        <div className='usermenu'>
-            <h2 class="bg-blue-200 text-4xl underline pl-10 font-bold">Dashboard</h2>
-        <h3>
-        <ul type='circle'>
-        <li>
-          <Link className='nav-link' to='/User'>
-            Account homepage
-          </Link>
-        </li><p />
-        <li>
-          <Link className='nav-link' to='/Add_request'>
-            Add request
-          </Link>
-        </li><p />
-        <li>
-          <Link className='nav-link' to={`/track?id=${id}`}>
-            Track your application
-          </Link>
-        </li><p />
-        
-        <li>
-          <Link className='nav-link' to={`/Userprofile`}>
-            Profile
-          </Link>
-        </li><p/>
-        <li>
-          <Link className='nav-link' to={`/Logout?id=${id}`}>
-            Logout
-          </Link>
-        </li>
-      </ul></h3></div>
-    )
-    }
-    export default usermenu
+
+function UserMenu() {
+  const id = localStorage.getItem('id');
+
+  return (
+    <div className='usermenu'>
+    <h3>
+        <ul className="menu-list">
+          <li>
+            <Link className='nav-link' to='/User'>
+            <span style={{ display: 'flex', alignItems: 'center' }}> <AiOutlineHome style={{ marginRight: '5px', color: 'blue' }} /><span> Account homepage</span></span>
+            </Link>
+          </li>
+          <br/>
+          <li>
+            <Link className='nav-link' to='/Add_request'>
+            <span style={{ display: 'flex', alignItems: 'center' }}> <AiFillFileAdd style={{ marginRight: '5px', color: 'blue' }} /><span> Add request</span></span>
+            </Link>
+          </li>
+          <br/>
+          <li>
+            <Link className='nav-link' to={`/track?id=${id}`}>
+            <span style={{ display: 'flex', alignItems: 'center' }}> <AiFillProfile style={{ marginRight: '5px', color: 'blue' }} /><span> Track your application</span></span>
+            </Link>
+          </li>
+          <br/>
+          <li>
+            <Link className='nav-link' to={`/Userprofile`}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>  <AiOutlineUser style={{ marginRight: '5px', color: 'blue' }} /><span> Profile</span></span>
+            </Link>
+          </li>
+          <br/><br/><br/>
+          <li className="logout">
+            <Link className='nav-link' to={`/Logout?id=${id}`}>
+            <span style={{ display: 'flex', alignItems: 'center' }}> <AiOutlineLogout style={{ marginRight: '5px', color: 'red' }} /><span>Logout</span></span>
+            </Link>
+          </li>
+        </ul>
+      </h3>
+    </div>
+  );
+}
+
+export default UserMenu;

@@ -58,12 +58,10 @@ function UpdateRequest() {
   };
 
   return (
-    <><body className='dash'>
+    <>
       <Userheader/>
-      <div className="container">
-        <div className="column1"><Adminmenu /></div>
-        <div className="separator"></div>
-        <div className="column">
+     <Adminmenu />
+        
           <div className='loginbox'><center>
             <h3 class="text-2xl font-bold">Assign the User to the corresponding department</h3>
             <form onSubmit={handleSubmit}>
@@ -89,8 +87,7 @@ function UpdateRequest() {
               </div>
             )}</center>
           </div>
-        </div>
-      </div></body>
+       
     </>
   );
 }

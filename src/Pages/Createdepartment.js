@@ -41,22 +41,20 @@ function DepartmentForm() {
   return (
     <>
       <Userheader/>
-      <div className="container">
-        <div className="column1"><Adminmenu /></div>
-        <div className="separator"></div>
-        <div className="column">
+     <Adminmenu />
+        
   <div className='restbox'>
     <form onSubmit={handleSubmit}>
       {message && <p>{message}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       
-        <label htmlFor="dep_name">Department Name</label>
+        <label htmlFor="dep_name">Department Name</label><br/>
         <input
           type="text"
           id="dep_name"
           value={depName}
           onChange={(event) => setDepName(event.target.value)}
-        />
+        /><br/>
       
       
         <label htmlFor="dep_email">Department Email</label><br/>
@@ -75,8 +73,8 @@ function DepartmentForm() {
           onChange={(event) => setDepDesc(event.target.value)}
         /><br/><br/>
       
-      <button type="submit">Add department</button>
-    </form></div></div></div></>
+      <button type="submit" class="bg-blue-500 rounded color-white">Add department</button>
+    </form></div></>
   );
 }
 

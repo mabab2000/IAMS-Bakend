@@ -74,7 +74,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Header/>,
+    element: <Login/>,
   },
   {
     path: "createdepartment",

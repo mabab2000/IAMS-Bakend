@@ -50,11 +50,9 @@ const token=localStorage.getItem('token');
   };
 
   return (
-    <><body className='dash'><Userheader/>
-    <div className="container">
-    <div className="column1"><Adminmenu /></div>
-      <div className="separator"></div>
-      <div className="column">
+    <><Userheader/>
+    
+   <Adminmenu />
     <div className='loginbox'><h1>Assign user to corresponding role</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -64,7 +62,9 @@ const token=localStorage.getItem('token');
 <p/>
             Select role:<p/>
               <select name='role_id' required onChange={(e) => setFormData({ ...formData, role_id: e.target.value })}>
+              <option value=''>..Select role...</option>
               {requests && requests.map(request => (
+                 
   <option value={`${request.id}`}>{request.id}.{request.name}</option>
 
           ))}</select><br/><br/>
@@ -78,7 +78,7 @@ const token=localStorage.getItem('token');
           <p>Status: {response.status}</p>
         </div>
       )}
-    </div></div></div></body></>
+    </div></>
   );
 }
 

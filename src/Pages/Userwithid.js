@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './index.css';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Userheader from './Userheader';
@@ -46,7 +47,7 @@ function RequestTable() {
   }
 
   return (
-    <><body><Userheader/>
+    <><body className='dash'><Userheader/>
     <div className="container">
     <div className="column1"><Adminmenu /></div>
       <div className="separator"></div>

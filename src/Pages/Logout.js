@@ -43,14 +43,15 @@ function Logout() {
         <div className="column">
           
       <h1>{logoutMsg}</h1>
+      <div class="loginbox">
       <h2><font color='red'><center>Sign out information</center></font></h2>
 <h3><center>By logging out you will have better insight into who is accessing your  your accounts as only those with the password will be able to log in. Alternatively, by not logging out you have less control over who uses the account and what they see</center></h3>
-<p /><br /><br /><br /><br /><font color='blue'><center>Click logout button bellow to singn out</center></font><br /><br /><center>
-    
-
+<p /><br /><br /><br /><br /><font color='blue'><center>Click logout button bellow to singn out</center></font><br /><br />
+</div>
+<center>
       <button onClick={handleLogout} style={{backgroundColor: 'red',width:'30', color: 'white', padding: '15px', border: 'none', borderRadius: '3px', cursor: 'pointer'}}>Logout</button>
-                
-   </center>
+      </center>         
+  
       </div>
       </div></body>
     </>

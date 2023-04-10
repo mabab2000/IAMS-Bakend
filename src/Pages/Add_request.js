@@ -52,7 +52,7 @@ const Form = () => {
       console.error(error.response.data); // error response
       if (error.response.data.message.includes('Duplicate entry')) {
         setError('Your request is already received');
-        setError(null);
+      
       } else {
         setError(error.response.data.message);
       }

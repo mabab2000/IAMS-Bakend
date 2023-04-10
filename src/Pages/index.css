@@ -36,7 +36,7 @@ input{
 border: 1px solid #4b15c9;
 padding: 20px;
 align-items: center;
-width: 300px;
+width: auto;
 background-color: rgb(49, 104, 104);
 position: absolute;
 top: 50%;
@@ -147,7 +147,7 @@ li{
   color: red;
 }
 li{
-  @apply text-green-800 hover:bg-black hover:text-3xl hover:text-white pl-4;
+  @apply text-green-800 hover:bg-black  hover:text-white pl-4;
 }
 
  
